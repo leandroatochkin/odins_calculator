@@ -64,55 +64,50 @@ function getResult() {
 }
 
 function operate(arr) {
-    const operatorRegex = /[-+/x]/
-    const numberRegex = /-?\d+(\.\d+)?/ 
-    let operator = ''
-    let firstEntry = ''
-    let secondEntry = ''
-    let result = 0
+const operatorRegex = /[-+*/]/; // Corrected regex to include *
+const numberRegex = /-?\d+(\.\d+)?/; 
+let operator = '';
+let firstEntry = '';
+let secondEntry = '';
+let result = 0;
 
-    for (let i = 0; i < arr.length; i++) {
-        if (numberRegex.test(arr[i])) {
-            if (operator === '') {
-                firstEntry += arr[i];
-            } else {
-                secondEntry += arr[i];
-            }
-        } else if (operatorRegex.test(arr[i])) {
-            if (arr[i] === '-' && firstEntry === '') {
-                firstEntry += arr[i];
-            } else {
-                operator = arr[i];
-            }
+for (let i = 0; i < arr.length; i++) {
+    if (numberRegex.test(arr[i])) {
+        if (operator === '') {
+            firstEntry += arr[i];
+        } else {
+            secondEntry += arr[i];
         }
-    }
-    console.log(firstEntry)
-    console.log(secondEntry)
-
-    let firstValue = Number(firstEntry);
-    console.log(firstValue)
-    let secondValue = Number(secondEntry);
-    console.log(secondValue)
-
-    switch (operator) {
-        case "+":
-            result = firstValue + secondValue;
-            break;
-        case "-":
-            result = firstValue - secondValue;
-            break;
-        case "x":
-            result = firstValue * secondValue;
-            break;
-        case "/":
-            if (secondValue === 0) {
-                console.log("Error: Division by zero");
-                return 'e';
-            }
-            result = firstValue / secondValue;
-            break;
-    }
-    return result;
+    } else if (operatorRegex.test(arr[i])) {
+        if (arr[i] === '-' && firstEntry === '') {
+            firstEntry += arr[i];
+        } else {
+            operator = arr[i];
+        }
 }
 
+}
 
+let firstValue = parseInt(firstEntry);
+let secondValue = parseInt(secondEntry);
+
+switch (operator) {
+    case "+":
+        result = firstValue + secondValue;
+        break;
+    case "-":
+        result = firstValue - secondValue;
+        break;
+    case "*":
+        result = firstValue * secondValue;
+        break;
+    case "/":
+        if (secondValue === 0) {
+            console.log("Error: Division by zero");
+            return 'e';
+        }
+        result = firstValue / secondValue;
+        break;
+}
+return result;
+}
