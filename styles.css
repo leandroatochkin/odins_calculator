@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+}
+#brand{
+    height: 20px;
+}
+button{
+    font-family: "Orbitron", sans-serif;
+}
+#button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#pad{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#numpad{
+    display: flex;
+    flex-direction: column;
+}
+#operations{
+    display: flex;
+    flex-direction: column;   
+}
+#functions{
+    width: 150px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.function-buttons{
+    border-radius: 4px;
+}
+.numpad-button{
+    height: 30px;
+    width: 30px;
+    margin-bottom: 3px;
+    border-radius: 4px;
+}
+.function-buttons:hover, .numpad-button:hover{
+    background-color: bisque;
+}
+#screen{
+    background-color: yellow;
+    height: 50px;
+    width: 150px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: inset gray 0px 0px 60px -12px; 
+}
+#screen-operations{
+    height: 15px;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Orbitron", sans-serif;
+}
+#result{
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-end;
+    font-family: "Orbitron", sans-serif;
+}
+#case{
+    width: 170px;
+    height: 250px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 10px;
+    background-color:darkslategray;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1); 
+}
+#equal{
+    height: 30px;
+    width: 60px;
+    margin-bottom: 3px;
+    border-radius: 4px;
+    background-color: orangered;
+}
+
+.numpad-operations{
+    background-color: darkorange;
+}
